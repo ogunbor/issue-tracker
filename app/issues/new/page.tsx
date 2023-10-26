@@ -1,18 +1,17 @@
-"use client";
+'use client';
 
 import { Button, Callout, Text, TextField } from '@radix-ui/themes';
 import SimpleMDE from 'react-simplemde-editor';
-import { useForm, Controller } from "react-hook-form";
-import axios from "axios";
-import "easymde/dist/easymde.min.css";
-import { useRouter } from "next/navigation";
+import { useForm, Controller } from 'react-hook-form';
+import axios from 'axios';
+import 'easymde/dist/easymde.min.css';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { createIssueSchema } from '@/app/validationSchemas';
 import { z } from 'zod';
 import ErrorMessage from '@/app/components/ErrorMessage';
 import Spinner from '@/app/components/Spinner';
-
 
 type IssueForm = z.infer<typeof createIssueSchema>;
 
@@ -43,7 +42,7 @@ const NewIssuePage = () => {
   return (
     <div className="max-w-xl">
       {error && (
-        <Callout.Root color="red" className='mb-5'>
+        <Callout.Root color="red" className="mb-5">
           <Callout.Text>{error}</Callout.Text>
         </Callout.Root>
       )}
